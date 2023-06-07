@@ -31,10 +31,16 @@ const RandomColor = () => {
         ></div>
       )}
       <div className="buttons">
-        <button className="btn-change" onClick={handleColorChange}>
-          Random Traffic
-        </button>
-        <button onClick={handleNewColor}>New Color</button>
+        <div className="btn-random">
+          <button className="btn-change" onClick={handleColorChange}>
+            Random Traffic
+          </button>
+        </div>
+        <div className="btn-new">
+          <button className="btn-change" onClick={handleNewColor}>
+            New Color
+          </button>
+        </div>
       </div>
     </div>
   );

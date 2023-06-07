@@ -15,6 +15,7 @@ body {
   width: 200px;
   height: 300px;
   position: relative;
+  z-index: 2;
 }
 
 .top {
@@ -109,6 +110,8 @@ body {
   height: 10px;
   width: 50%;
   display: block;
+  z-index: 1;
+  border: 2px solid #fff;
   position: absolute;
   top: 34%;
   left: 28%;
