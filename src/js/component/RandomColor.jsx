@@ -11,7 +11,7 @@ const RandomColor = () => {
   };
 
   const handleNewColor = () => {
-    setNewColor(true);
+    setNewColor(!newColor);
   };
   const handleNewColorClick = () => {
     setColor("purple-click");
@@ -19,17 +19,31 @@ const RandomColor = () => {
 
   return (
     <div>
-      <div className={color === "red-click" ? "red-click" : "red"}></div>
-      <div
-        className={color === "yellow-click" ? "yellow-click" : "yellow"}
-      ></div>
-      <div className={color === "green-click" ? "green-click" : "green"}></div>
-      {newColor && (
-        <div
-          className={color === "purple-click" ? "purple-click" : "purple"}
-          onClick={handleNewColorClick}
-        ></div>
-      )}
+      <div className={color === "red-click" ? "red-click" : "red"}>
+        {newColor && (
+          <div
+            className={color === "purple-click" ? "purple-click" : "purple"}
+            onClick={handleNewColorClick}
+          ></div>
+        )}
+      </div>
+      <div className={color === "yellow-click" ? "yellow-click" : "yellow"}>
+        {newColor && (
+          <div
+            className={color === "purple-click" ? "purple-click" : "purple"}
+            onClick={handleNewColorClick}
+          ></div>
+        )}
+      </div>
+      <div className={color === "green-click" ? "green-click" : "green"}>
+        {newColor && (
+          <div
+            className={color === "purple-click" ? "purple-click" : "purple"}
+            onClick={handleNewColorClick}
+          ></div>
+        )}
+      </div>
+
       <div className="buttons">
         <div className="btn-random">
           <button className="btn-change" onClick={handleColorChange}>
