@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Lights = () => {
+function Lights() {
   const [isRed, setIsRed] = useState(true);
   const [isYellow, setIsYellow] = useState(false);
   const [isGreen, setIsGreen] = useState(false);
@@ -21,6 +21,11 @@ const Lights = () => {
     setIsRed(false);
   };
 
+  const randomColor = () => {
+   let arrColor = ['red-click', 'yellow-click', 'green-click']
+
+  }
+
   return (
     <div>
       <div className={isRed ? "red-click" : "red"} onClick={handleRed}></div>
@@ -34,6 +39,6 @@ const Lights = () => {
       ></div>
     </div>
   );
-};
+}
 
 export default Lights;

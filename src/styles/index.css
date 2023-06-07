@@ -75,3 +75,10 @@
   margin-top: 10px !important;
   margin: auto;
 }
+
+.btn-change {
+  background-color: darkslategray;
+  color: #d7900b;
+  font-weight: 600;
+  margin: 15px 0 0 5px;
+  
