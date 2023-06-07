@@ -16,13 +16,11 @@ function Lights() {
   };
 
   const handleNewColor = () => {
-    setNewColor(true);
+    setNewColor(!newColor);
   };
 
   const handleNewColorClick = () => {
-    if (newColor) {
-      setColor("purple-click");
-    }
+    setColor("purple");
   };
 
   return (
@@ -33,7 +31,7 @@ function Lights() {
       >
         {newColor && (
           <div
-            className={color === "purple-click" ? "purple-click" : "purple"}
+            className={color === "purple-click" ? "purple" : "purple-click"}
             onClick={handleNewColorClick}
           ></div>
         )}
@@ -44,7 +42,7 @@ function Lights() {
       >
         {newColor && (
           <div
-            className={color === "purple-click" ? "purple-click" : "purple"}
+            className={color === "purple-click" ? "purple" : "purple-click"}
             onClick={handleNewColorClick}
           ></div>
         )}
@@ -55,7 +53,7 @@ function Lights() {
       >
         {newColor && (
           <div
-            className={color === "purple-click" ? "purple-click" : "purple"}
+            className={color === "purple-click" ? "purple" : "purple-click"}
             onClick={handleNewColorClick}
           ></div>
         )}

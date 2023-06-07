@@ -3,7 +3,7 @@
 }
 
 body {
-  background-image: url(https://ds.static.rtbf.be/article/image/1920x1080/7/6/a/9df81829c4ebc9c427b9afe0438dce5a-1517983575.jpg);
+  background-image: url(https://static.lostintheusa.fr/wp-content/uploads/2016/09/IMG_4680.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -21,6 +21,8 @@ body {
 .top {
   background-color: #000;
   margin: auto;
+  border-bottom: none !important;
+  border: 2px solid #fff;
   width: 20px;
   height: 90px;
 }
@@ -91,30 +93,53 @@ body {
   animation: pulseGreen 0.9s linear 0.2s infinite;
 }
 
-.btn-change {
-  background-color: darkslategray;
-  color: #d7900b;
-  font-weight: 600;
-  margin: 10px 0 0 1px;
-  padding: 2px 32px;
-  transition: all 0.3s;
-  border-radius: 5px;
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
 }
-.btn-change:hover {
-  background-color: #d7900b;
-  color: darkslategray;
+.btn-new {
+  text-align: center;
+  margin-top: 10px;
 }
 
-.center-light {
-  background-color: #000;
-  height: 10px;
-  width: 50%;
+.btn-new::after {
+  content: "";
   display: block;
-  z-index: 1;
-  border: 2px solid #fff;
   position: absolute;
-  top: 20%;
-  left: 28%;
+  z-index: 0;
+  width: 20px;
+  height: 117px;
+  border: 2px solid #fff;
+  bottom: 0;
+  left: 42%;
+  background-color: #000;
+  border-top: none;
+  border-bottom: none;
+}
+
+.btn-change {
+  background-color: #000;
+  color: #d7900b;
+  font-weight: 600;
+  border: 2px solid #d7900b;
+  padding: 10px 60px;
+  transition: all 0.4s;
+  position: relative;
+  z-index: 8;
+  font-size: 1rem;
+  white-space: nowrap;
+  border-radius: 5px;
+  display: flex;
+}
+.btn-change:hover {
+  border: 2px solid #000;
+  background-color: #d7900b;
+  color: #000;
 }
 
 .purple {
