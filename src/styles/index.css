@@ -21,19 +21,22 @@ body {
 .top {
   background-color: #000;
   margin: auto;
+  border-top: none !important;
   border-bottom: none !important;
-  border: 2px solid #fff;
+  border: 2px solid #d7900b;
   width: 20px;
   height: 90px;
 }
 
 .traffic {
   background-color: #000;
-  border: 2px solid #fff;
+  border: 2px solid #d7900b;
   margin: auto;
   width: 130px;
   border-radius: 5px;
   height: 290px;
+  position: relative;
+  z-index: 50;
   padding-top: 8px;
 }
 
@@ -114,7 +117,7 @@ body {
   z-index: 0;
   width: 20px;
   height: 117px;
-  border: 2px solid #fff;
+  border: 2px solid #d7900b;
   bottom: 0;
   left: 42%;
   background-color: #000;
@@ -131,14 +134,17 @@ body {
   transition: all 0.4s;
   position: relative;
   z-index: 8;
+  text-shadow: 4px 4px 22px #d7900b;
   font-size: 1rem;
   white-space: nowrap;
   border-radius: 5px;
+  animation: pulseHover 0.9s linear 0.2s infinite;
   display: flex;
 }
 .btn-change:hover {
   border: 2px solid #000;
   background-color: #d7900b;
+  animation: pulseBlack 0.9s linear 0.2s infinite;
   color: #000;
 }
 
@@ -159,7 +165,11 @@ body {
   margin: auto;
   animation: pulsePurple 0.9s linear 0.2s infinite;
 }
-@-webkit-keyframes pulsePurple {
+
+/******************************
+************KEYFRAMES*********
+*****************************/
+@keyframes pulsePurple {
   0% {
     box-shadow: 0 0 16px #ff00f2, inset 0 0 16px #ff00f2;
   }
@@ -171,7 +181,7 @@ body {
   }
 }
 
-@-webkit-keyframes pulseRed {
+@keyframes pulseRed {
   0% {
     box-shadow: 0 0 16px #ff0000, inset 0 0 16px #df0000;
   }
@@ -182,7 +192,7 @@ body {
     box-shadow: 0 0 16px #ff0000, inset 0 0 16px #ff0000;
   }
 }
-@-webkit-keyframes pulseYellow {
+@keyframes pulseYellow {
   0% {
     box-shadow: 0 0 16px #d7900b, inset 0 0 16px #d7900b;
   }
@@ -193,7 +203,7 @@ body {
     box-shadow: 0 0 16px #d7900b, inset 0 0 16px #d7900b;
   }
 }
-@-webkit-keyframes pulseGreen {
+@keyframes pulseGreen {
   0% {
     box-shadow: 0 0 16px rgba(0, 255, 0, 1), inset 0 0 16px rgba(0, 255, 0, 1);
   }
@@ -202,5 +212,27 @@ body {
   }
   100% {
     box-shadow: 0 0 16px rgba(0, 255, 0, 1), inset 0 0 16px rgba(0, 255, 0, 1);
+  }
+}
+@keyframes pulseBlack {
+  0% {
+    box-shadow: 0 0 16px rgba(0, 0, 0, 1), inset 0 0 16px rgba(0, 0, 0, 1);
+  }
+  50% {
+    box-shadow: 0 0 32px rgba(0, 0, 0, 1), inset 0 0 28px rgba(0, 0, 0, 1);
+  }
+  100% {
+    box-shadow: 0 0 16px rgba(0, 0, 0, 1), inset 0 0 16px rgba(0, 0, 0, 1);
+  }
+}
+@keyframes pulseHover {
+  0% {
+    box-shadow: 0 0 16px #d7900b, inset 0 0 16px #d7900b;
+  }
+  50% {
+    box-shadow: 0 0 32px #d7900b, inset 0 0 28px #d7900b;
+  }
+  100% {
+    box-shadow: 0 0 16px #d7900b, inset 0 0 16px #d7900b;
   }
 }
