@@ -2,11 +2,19 @@ import React, { useState } from "react";
 
 const RandomColor = () => {
   const [color, setColor] = useState("red-click");
+  const [newColor, setNewColor] = useState(false);
 
   const handleColorChange = () => {
     const colors = ["red-click", "yellow-click", "green-click"];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
     setColor(randomColor);
+  };
+
+  const handleNewColor = () => {
+    setNewColor(true);
+  };
+  const handleNewColorClick = () => {
+    setColor("purple-click");
   };
 
   return (
@@ -16,9 +24,18 @@ const RandomColor = () => {
         className={color === "yellow-click" ? "yellow-click" : "yellow"}
       ></div>
       <div className={color === "green-click" ? "green-click" : "green"}></div>
-      <button className="btn-change" onClick={handleColorChange}>
-        Random Traffic
-      </button>
+      {newColor && (
+        <div
+          className={color === "purple-click" ? "purple-click" : "purple"}
+          onClick={handleNewColorClick}
+        ></div>
+      )}
+      <div className="buttons">
+        <button className="btn-change" onClick={handleColorChange}>
+          Random Traffic
+        </button>
+        <button onClick={handleNewColor}>New Color</button>
+      </div>
     </div>
   );
 };
