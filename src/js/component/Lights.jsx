@@ -1,42 +1,77 @@
 import React, { useState } from "react";
 
 function Lights() {
-  const [isRed, setIsRed] = useState(true);
-  const [isYellow, setIsYellow] = useState(false);
-  const [isGreen, setIsGreen] = useState(false);
+  const [color, setColor] = useState("red-click");
+  const [newColor, setNewColor] = useState(false);
 
-  const handleRed = () => {
-    setIsRed(!isRed);
-    setIsYellow(false);
-    setIsGreen(false);
-  };
-  const handleYellow = () => {
-    setIsYellow(!isYellow);
-    setIsGreen(false);
-    setIsRed(false);
-  };
-  const handleGreen = () => {
-    setIsGreen(!isGreen);
-    setIsYellow(false);
-    setIsRed(false);
+  const handleColorChange = (newColor) => {
+    setColor(newColor);
   };
 
-  const randomColor = () => {
-   let arrColor = ['red-click', 'yellow-click', 'green-click']
+  const handleRandomColor = () => {
+    const colors = ["red-click", "yellow-click", "green-click"];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    setColor(randomColor);
+    setNewColor(false);
+  };
 
-  }
+  const handleNewColor = () => {
+    setNewColor(true);
+  };
+
+  const handleNewColorClick = () => {
+    if (newColor) {
+      setColor("purple-click");
+    }
+  };
 
   return (
     <div>
-      <div className={isRed ? "red-click" : "red"} onClick={handleRed}></div>
       <div
-        className={isYellow ? "yellow-click" : "yellow"}
-        onClick={handleYellow}
-      ></div>
+        className={color === "red-click" ? "red-click" : "red"}
+        onClick={() => handleColorChange("red-click")}
+      >
+        {newColor && (
+          <div
+            className={color === "purple-click" ? "purple-click" : "purple"}
+            onClick={handleNewColorClick}
+          ></div>
+        )}
+      </div>
       <div
-        className={isGreen ? "green-click" : "green"}
-        onClick={handleGreen}
-      ></div>
+        className={color === "yellow-click" ? "yellow-click" : "yellow"}
+        onClick={() => handleColorChange("yellow-click")}
+      >
+        {newColor && (
+          <div
+            className={color === "purple-click" ? "purple-click" : "purple"}
+            onClick={handleNewColorClick}
+          ></div>
+        )}
+      </div>
+      <div
+        className={color === "green-click" ? "green-click" : "green"}
+        onClick={() => handleColorChange("green-click")}
+      >
+        {newColor && (
+          <div
+            className={color === "purple-click" ? "purple-click" : "purple"}
+            onClick={handleNewColorClick}
+          ></div>
+        )}
+      </div>
+      <div className="buttons">
+        <div className="btn-random">
+          <button className="btn-change" onClick={handleRandomColor}>
+            Random Traffic
+          </button>
+        </div>
+        <div className="btn-new">
+          <button className="btn-change" onClick={handleNewColor}>
+            New Color
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
